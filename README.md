@@ -90,9 +90,17 @@ sudo ./engine ps
 commands
 ```
 sudo pkill engine
+```
+```
 sudo rm -f /tmp/mini_runtime.sock
+```
+```
 sudo ./engine supervisor ~/rootfs-base
+```
+```
 sudo ./engine run alpha ~/rootfs-alpha /bin/sh
+```
+```
 sudo ./engine logs alpha
 ```
 📸 Screenshot 4: CLI interacting with supervisor via IPC (UNIX socket)
@@ -100,16 +108,38 @@ sudo ./engine logs alpha
 commands
 ```
 sudo ./engine supervisor ~/rootfs-base
+```
+```
 sudo ./engine run alpha ~/rootfs-alpha /bin/sh
 sudo ./engine run alpha ~/rootfs-alpha /bin/sh
+```
+```
 sudo ./engine ps
 ```
 📸 Screenshot 5: Kernel module detecting SOFT memory limit breach
 <img width="1219" height="350" alt="5" src="https://github.com/user-attachments/assets/8747f92d-a188-4dbb-bbb5-76ae7d1ef858" />
 commands
 ```
+make clean
+make
+```
+```
+sudo rmmod monitor   # ignore error if not loaded
+sudo insmod monitor.ko
+```
+```
+ls /dev | grep monitor
+```
+```
 sudo ./engine supervisor ~/rootfs-base
+```
+```
+cp memory_hog ~/rootfs-alpha/
+```
+```
 sudo ./engine run alpha ~/rootfs-alpha ./memory_hog
+```
+```
 sudo dmesg | tail
 ```
 📸 Screenshot 6: Kernel enforcing HARD memory limit (process terminated)

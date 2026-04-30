@@ -156,8 +156,12 @@ sudo dmesg | tail
 
 ```
 gcc -O2 -o cpu_hog cpu_hog.c
+```
+```
 ./cpu_hog 100 &
 ./io_pulse &
+```
+```
 top -o %CPU
 ```
 📸 Screenshot 8: Clean teardown (no running processes or zombies)
@@ -165,13 +169,19 @@ top -o %CPU
 
 ```
 sudo pkill -9 engine
+```
+```
 pkill cpu_hog
 pkill io_pulse
+```
+```
 sudo rm -f /tmp/mini_runtime.sock
+```
+```
 ps aux | grep engine
 ```
 
----
+
 
 ## 🧪 Observations
 

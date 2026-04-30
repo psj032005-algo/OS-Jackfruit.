@@ -14,9 +14,11 @@ modules.order
 *.cmd
 .tmp_versions/
 
-# Root filesystems (DO NOT upload)
+# Root filesystems 
 rootfs-*/
 *.tar.gz
+*.o
+*.out
 
 # Logs
 *.log

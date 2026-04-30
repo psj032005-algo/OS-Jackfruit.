@@ -181,7 +181,7 @@ sudo rm -f /tmp/mini_runtime.sock
 ps aux | grep engine
 ```
 
-```
+---
 
 ## 🧪 Observations
 
